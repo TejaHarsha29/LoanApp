@@ -8,26 +8,35 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: product-service
-          uri: lb://product-service
+        - id: medical-services
+          uri: lb://medical-services
           predicates:
-            - Path=/product/**
+            - Path=/api/**
 
-        - id: rating-service
-          uri: lb://rating-service
+        - id: userlogin-service
+          uri: lb://userlogin-service
           predicates:
-            - Path=/ratings/**
+            - Path=/api/**
 
-        - id: catalog-service
-          uri: lb://catalog-service
+        - id: shopping-service
+          uri: lb://shopping-service
           predicates:
-            - Path=/catalog/**
+            - Path=/api/**
 
-        - id: item-service
-          uri: lb://mongodb-service
+        - id: food-service
+          uri: lb://food-service
           predicates:
-            - Path=/item/**
+            - Path=/api/**
 
+        - id: cinema-service
+          uri: lb://cinema-service
+          predicates:
+            - Path=/api/**
+
+        - id: cart-service
+          uri: lb://cart-service
+          predicates:
+            - Path=/api/**
 eureka:
   instance:
     prefer-ip-address: true

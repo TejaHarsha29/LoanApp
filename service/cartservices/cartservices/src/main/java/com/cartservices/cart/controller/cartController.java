@@ -36,6 +36,7 @@ public class cartController {
     @PostMapping("/buynow/{user_id}")
     public String buynow(@PathVariable int user_id){
         float billamount=cartService.BillAmount(user_id);
+        return String.valueOf(billamount);
 
     }
 }
